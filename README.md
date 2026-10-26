@@ -28,7 +28,7 @@ Then run **Developer: Reload Window**.
 
 | Setting | Default | Description |
 |---|---|---|
-| `pi.command` | `pi` | Command used to start Pi. Add flags here, e.g. `pi --continue` to reopen your last session, or `pi --model spark/qwen3.8-flash-next`. |
+| `pi.command` | `pi` | Command used to start Pi. Add flags here, e.g. `pi --continue` to reopen your last session, or `pi --model <provider>/<model>` to pick a model. |
 
 ## How it works
 
