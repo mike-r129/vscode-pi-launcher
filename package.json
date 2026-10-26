@@ -1,0 +1,36 @@
+{
+  "name": "pi-launcher",
+  "displayName": "Pi Launcher",
+  "description": "Editor-title button that opens a Pi terminal beside the editor, in the current workspace folder.",
+  "version": "0.1.2",
+  "publisher": "mike-r129",
+  "license": "MIT",
+  "private": true,
+  "repository": { "type": "git", "url": "https://github.com/mike-r129/vscode-pi-launcher" },
+  "engines": { "vscode": "^1.94.0" },
+  "main": "./extension.js",
+  "files": ["extension.js", "images/", "LICENSE", "README.md"],
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "pi.openTerminal",
+        "title": "Open Pi",
+        "icon": { "light": "images/button-dark.svg", "dark": "images/button-light.svg" }
+      }
+    ],
+    "menus": {
+      "editor/title": [{ "command": "pi.openTerminal", "group": "navigation" }]
+    },
+    "configuration": {
+      "title": "Pi Launcher",
+      "properties": {
+        "pi.command": {
+          "type": "string",
+          "default": "pi",
+          "description": "Command used to start Pi (add flags here, e.g. \"pi --continue\")."
+        }
+      }
+    }
+  }
+}
