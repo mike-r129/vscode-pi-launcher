@@ -30,6 +30,8 @@ Then run **Developer: Reload Window**.
 |---|---|---|
 | `pi.command` | `pi` | Command used to start Pi. Add flags here, e.g. `pi --continue` to reopen your last session, or `pi --model <provider>/<model>` to pick a model. |
 
+`pi.command` can only be set in your user settings, not in a workspace's `.vscode/settings.json`, so a cloned repo can't change what the button runs.
+
 ## How it works
 
 `extension.js` is about 50 lines of plain JavaScript, with no dependencies and no build step. It registers one command that creates a terminal running Pi directly, through `cmd.exe /c` on Windows or `/bin/sh -lc` elsewhere. Pi is the terminal's process rather than being typed into a shell. Read it before you install it; that's the point of keeping it small.

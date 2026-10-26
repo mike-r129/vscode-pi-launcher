@@ -29,7 +29,7 @@ function activate(context) {
         process.platform === "win32"
           ? // A string (not an array) reaches cmd verbatim; an array would get its quotes backslash-escaped.
             { shellPath: process.env.ComSpec || "cmd.exe", shellArgs: `/d /c "${command} || pause"` }
-          : { shellPath: "/bin/sh", shellArgs: ["-lc", `exec ${command}`] };
+          : { shellPath: "/bin/sh", shellArgs: ["-lc", `${command} || { printf '\nPress Enter to close'; read _; }`] };
       const terminal = vscode.window.createTerminal({
         name: "Pi",
         cwd: workingDir(),

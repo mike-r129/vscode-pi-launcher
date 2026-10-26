@@ -28,6 +28,7 @@
         "pi.command": {
           "type": "string",
           "default": "pi",
+          "scope": "machine",
           "description": "Command used to start Pi (add flags here, e.g. \"pi --continue\")."
         }
       }
